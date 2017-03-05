@@ -19,22 +19,25 @@ from random import choice
 
 rock_paper_scissors = ["R", "P", "S"]
 
-computers_choice = choice(rock_paper_scissors)
+
 
 
 #User enter his/her item of choice (R, P or S)
 
-users_choice = raw_input("Enter your choice:")
-users_choice = users_choice.upper()
+
 
 #If the user input is same as the random number, display the tie
 while True:
-	
+	computers_choice = choice(rock_paper_scissors)
+
+	users_choice = raw_input("Enter your choice:")
+	users_choice = users_choice.upper()
 	if users_choice == computers_choice:
 	
 		print users_name + " ,you chose ",users_choice
 		print "Computer chose ",computers_choice
 		print "Tie!"
+
 
 #If the user input is rock and the computer choice is scissors, display that the user won
 	
@@ -91,10 +94,11 @@ while True:
 		print "Congratulations " + users_name + " ,you've reached 5 points! You win!"
 		break
     #Provide proper conditions for elif in case user getting 5 points:
-	else:
+	elif computers_score == 5:
 		#Congratulate the user on winning along with their name
 		print users_name + " ,Computer's reached 5 points! You lose!"
 		break
+
 
 
 
